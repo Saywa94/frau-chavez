@@ -18,7 +18,9 @@ export default function Home() {
           <h1>Frau Chavez Institute</h1>
         </div>
 
-        <div className={styles.grid}></div>
+        <div className={styles.grid}>
+          <h3>En construccion...</h3>
+        </div>
       </main>
     </>
   );
