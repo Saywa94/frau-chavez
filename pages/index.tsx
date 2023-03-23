@@ -14,7 +14,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.center}></div>
+        <div className={styles.center}>
+          <h1>Frau Chavez Institute</h1>
+        </div>
 
         <div className={styles.grid}></div>
       </main>
