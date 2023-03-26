@@ -5,25 +5,25 @@ import Slider from "@/components/Slider";
 const main_images = [
   {
     filename: "/images/torre_eiffel.jpg",
-    country: "",
-    description: "Torre Eiffel",
+    country: "France",
+    description: "Tour Eiffel",
     main: false,
   },
   {
     filename: "/images/new_york.jpg",
-    country: "",
-    description: "Manhathan Skyline",
+    country: "United States",
+    description: "Empire State Building",
     main: true,
   },
   {
     filename: "/images/brandenburger.jpg",
-    country: "",
-    description: "Brandenburger",
+    country: "Deutschland",
+    description: "Brandenburger Tor",
     main: false,
   },
   {
     filename: "/images/machupicchu.jpg",
-    country: "",
+    country: "Peru",
     description: "Machu Picchu",
     main: false,
   },

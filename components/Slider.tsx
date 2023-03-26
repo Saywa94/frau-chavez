@@ -27,12 +27,16 @@ export default function Slider(props: { images: Array<ImageInfo> }) {
   return (
     <>
       <div className={styles.slider}>
-        {images.map(({ filename, description, main }) => {
+        {images.map(({ filename, description, main, country }) => {
           return (
             <div
               className={`${styles.slide} ${main ? styles.active : ""}`}
               key={filename}
             >
+              <div className={styles.info_container}>
+                <span>{country}</span>
+                <span>{description}</span>
+              </div>
               <Image
                 className={styles.image}
                 src={filename}
