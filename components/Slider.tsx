@@ -56,11 +56,15 @@ export default function Slider(props: { images: Array<ImageInfo> }) {
                 height={1080}
                 alt={description}
               />
+              <div className={styles.main_title_container}>
+                <h1>Kulturwelt Institut</h1>
+                <p>Te abre las puertas al mundo y hace realidad tus sueños</p>
+              </div>
             </div>
           );
         })}
       </div>
-      <button onClick={handleClick}>Change</button>
+      <button onClick={handleClick}>next</button>
     </>
   );
 }
