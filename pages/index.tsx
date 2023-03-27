@@ -7,7 +7,7 @@ const main_images = [
     filename: "/images/new_york.jpg",
     country: "United States",
     description: "Empire State Building",
-    main: false,
+    main: true,
   },
   {
     filename: "/images/torre_eiffel.jpg",
@@ -19,7 +19,7 @@ const main_images = [
     filename: "/images/rio_janeiro.jpg",
     country: "Brasil",
     description: "Pão de Açúcar",
-    main: true,
+    main: false,
   },
   {
     filename: "/images/brandenburger.jpg",
