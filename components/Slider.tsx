@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Slider.module.css";
 import Image from "next/image";
 
@@ -11,17 +11,29 @@ type ImageInfo = {
   main: boolean;
 };
 
+function selectNextImage(images: Array<ImageInfo>) {
+  let index = images.findIndex(({ main }) => main === true);
+  index = index + 1 === images.length ? -1 : index;
+  const newImages = images.map((image, i) => {
+    return { ...image, main: i === index + 1 ? true : false };
+  });
+
+  return newImages;
+}
+
 export default function Slider(props: { images: Array<ImageInfo> }) {
   const [images, setImages] = useState(props.images);
 
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      console.log("useEffect was hit!!");
+      setImages(selectNextImage(images));
+    }, 7000);
+    return () => clearInterval(slideInterval);
+  }, [images]);
+
   function handleClick() {
-    let index = images.findIndex(({ main }) => main === true);
-    console.log(index);
-    index = index + 1 === images.length ? -1 : index;
-    const newImages = images.map((image, i) => {
-      return { ...image, main: i === index + 1 ? true : false };
-    });
-    setImages(newImages);
+    setImages(selectNextImage(images));
   }
 
   return (
@@ -34,8 +46,8 @@ export default function Slider(props: { images: Array<ImageInfo> }) {
               key={filename}
             >
               <div className={styles.info_container}>
-                <span>{country}</span>
                 <span>{description}</span>
+                <span>{country}</span>
               </div>
               <Image
                 className={styles.image}
