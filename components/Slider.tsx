@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import styles from "./Slider.module.css";
 import Image from "next/image";
 
@@ -24,17 +24,16 @@ function selectNextImage(images: Array<ImageInfo>) {
 export default function Slider(props: { images: Array<ImageInfo> }) {
   const [images, setImages] = useState(props.images);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const slideInterval = setInterval(() => {
-      console.log("useEffect was hit!!");
       setImages(selectNextImage(images));
     }, 7000);
     return () => clearInterval(slideInterval);
   }, [images]);
 
-  function handleClick() {
-    setImages(selectNextImage(images));
-  }
+  // function handleClick() {
+  //   setImages(selectNextImage(images));
+  // }
 
   return (
     <>
@@ -64,7 +63,7 @@ export default function Slider(props: { images: Array<ImageInfo> }) {
           );
         })}
       </div>
-      <button onClick={handleClick}>next</button>
+      {/* <button onClick={handleClick}>next</button> */}
     </>
   );
 }

@@ -4,15 +4,21 @@ import Slider from "@/components/Slider";
 
 const main_images = [
   {
+    filename: "/images/new_york.jpg",
+    country: "United States",
+    description: "Empire State Building",
+    main: false,
+  },
+  {
     filename: "/images/torre_eiffel.jpg",
     country: "France",
     description: "Tour Eiffel",
     main: false,
   },
   {
-    filename: "/images/new_york.jpg",
-    country: "United States",
-    description: "Empire State Building",
+    filename: "/images/rio_janeiro.jpg",
+    country: "Brasil",
+    description: "Pão de Açúcar",
     main: true,
   },
   {
@@ -47,7 +53,7 @@ export default function Home() {
 
         <div className={styles.content}>
           <div className={styles.center}>
-            <h1>Kulturwelt Institut</h1>
+            <h1></h1>
           </div>
 
           <div className={styles.grid}>
