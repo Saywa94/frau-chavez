@@ -1,8 +1,5 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./Slider.module.css";
-import Image from "next/image";
-
-import { useState } from "react";
 
 type ImageInfo = {
   filename: string;
@@ -11,44 +8,40 @@ type ImageInfo = {
   main: boolean;
 };
 
-function selectNextImage(images: Array<ImageInfo>) {
-  let index = images.findIndex(({ main }) => main === true);
-  index = index + 1 === images.length ? -1 : index;
-  const newImages = images.map((image, i) => {
-    return { ...image, main: i === index + 1 ? true : false };
-  });
+export default function Slider({ images }: { images: Array<ImageInfo> }) {
+  const indexRef = useRef(0);
 
-  return newImages;
-}
+  function showNextImage(index: number) {
+    const slides = document.querySelectorAll(`.${styles.slide}`);
+    const newIndex = index + 1 === slides.length ? 0 : index + 1;
 
-export default function Slider(props: { images: Array<ImageInfo> }) {
-  const [images, setImages] = useState(props.images);
+    slides[index].classList.remove(styles.active);
+    slides[newIndex].classList.add(styles.active);
 
-  useLayoutEffect(() => {
+    indexRef.current = newIndex;
+  }
+
+  useEffect(() => {
     const slideInterval = setInterval(() => {
-      setImages(selectNextImage(images));
-    }, 7000);
+      showNextImage(indexRef.current);
+    }, 6000);
     return () => clearInterval(slideInterval);
-  }, [images]);
-
-  // function handleClick() {
-  //   setImages(selectNextImage(images));
-  // }
+  }, []);
 
   return (
     <>
       <div className={styles.slider}>
-        {images.map(({ filename, description, main, country }) => {
+        {images.map(({ filename, description, country }, index) => {
           return (
             <div
-              className={`${styles.slide} ${main ? styles.active : ""}`}
+              className={`${styles.slide} ${index === 0 ? styles.active : ""}`}
               key={filename}
             >
               <div className={styles.info_container}>
                 <span>{description}</span>
                 <span>{country}</span>
               </div>
-              <Image
+              <img
                 className={styles.image}
                 src={filename}
                 width={1920}
@@ -63,7 +56,6 @@ export default function Slider(props: { images: Array<ImageInfo> }) {
           );
         })}
       </div>
-      {/* <button onClick={handleClick}>next</button> */}
     </>
   );
 }
