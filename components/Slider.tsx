@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./Slider.module.css";
+import Head from "next/head";
 
 type ImageInfo = {
   filename: string;
@@ -30,6 +31,10 @@ export default function Slider({ images }: { images: Array<ImageInfo> }) {
 
   return (
     <>
+      <Head>
+        <link rel="preload" href={images[0].filename} as="image" />
+      </Head>
+
       <div className={styles.slider}>
         {images.map(({ filename, description, country }, index) => {
           return (
