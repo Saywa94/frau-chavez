@@ -1,1 +1,1 @@
-This is a project in construction for a language learning institute called: Frau Chavez Institute
+This is a project in development for a language learning institute called: **Kulturwelt Institut**.

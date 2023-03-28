@@ -6,7 +6,6 @@ type ImageInfo = {
   filename: string;
   country: string;
   description: string;
-  main: boolean;
 };
 
 export default function Slider({ images }: { images: Array<ImageInfo> }) {
