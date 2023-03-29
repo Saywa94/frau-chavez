@@ -27,7 +27,7 @@
 
 .main_title_container {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -72,6 +72,14 @@
 }
 @media (max-width: 400px) {
   .info_container > span {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 330px) {
+  .main_title_container > h1 {
+    font-size: 1.8em;
+  }
+  .main_title_container > p {
     font-size: 0.8em;
   }
 }
