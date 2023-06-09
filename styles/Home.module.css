@@ -22,6 +22,12 @@
   padding: 4rem 0;
 }
 
+.signature {
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
 }

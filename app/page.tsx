@@ -40,8 +40,8 @@ export default function Home() {
             <h1></h1>
           </div>
 
-          <div className={styles.grid}>
-            <h3>A Frau Chavez project.</h3>
+          <div>
+            <p className={styles.signature}>A Frau Chavez project.</p>
           </div>
         </div>
       </main>
