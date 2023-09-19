@@ -27,7 +27,7 @@
 
 .main_title_container {
   position: absolute;
-  top: 40%;
+  top: 34%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -43,6 +43,37 @@
 }
 .main_title_container > p {
   font-size: 1.05em;
+}
+
+.main_button_container {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.main_button {
+  all: unset;
+  font-size: 1.3em;
+  min-width: 10em;
+  min-height: 2em;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  background: rgb(190 190 190 / 9%);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  transition: 0.2s;
+}
+.main_button:hover {
+  background-color: rgba(242, 242, 242, 0.333);
+}
+.main_button:active {
+  transform: scale(0.98);
 }
 
 .info_container {

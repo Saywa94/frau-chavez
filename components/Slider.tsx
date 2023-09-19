@@ -6,6 +6,7 @@ type ImageInfo = {
   filename: string;
   country: string;
   description: string;
+  button: string;
 };
 
 export default function Slider({ images }: { images: Array<ImageInfo> }) {
@@ -31,7 +32,7 @@ export default function Slider({ images }: { images: Array<ImageInfo> }) {
   return (
     <>
       <div className={styles.slider}>
-        {images.map(({ filename, description, country }, index) => (
+        {images.map(({ filename, description, country, button }, index) => (
           <div
             className={`${styles.slide} ${index === 0 ? styles.active : ""}`}
             key={filename}
@@ -50,6 +51,9 @@ export default function Slider({ images }: { images: Array<ImageInfo> }) {
             <div className={styles.main_title_container}>
               <h1>Kulturwelt Institut</h1>
               <p>Te abre las puertas al mundo y hace realidad tus sueños</p>
+            </div>
+            <div className={styles.main_button_container}>
+              <button className={styles.main_button}>{button}</button>
             </div>
           </div>
         ))}

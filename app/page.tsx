@@ -6,26 +6,31 @@ const main_images = [
     filename: "/images/new_york.jpg",
     country: "United States",
     description: "Empire State Building",
+    button: "Inglés",
   },
   {
     filename: "/images/torre_eiffel.jpg",
     country: "France",
     description: "Tour Eiffel",
+    button: "Francés",
   },
   {
     filename: "/images/rio_janeiro.jpg",
     country: "Brasil",
     description: "Pão de Açúcar",
+    button: "Portugués",
   },
   {
     filename: "/images/brandenburger.jpg",
     country: "Deutschland",
     description: "Brandenburger Tor",
+    button: "Alemán",
   },
   {
     filename: "/images/machupicchu.jpg",
     country: "Peru",
     description: "Machu Picchu",
+    button: "Español",
   },
 ];
 
