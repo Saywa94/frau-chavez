@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Kulturwelt",
-  description: "Cursos de Idiomas de Frau Chavez Institute",
+  description: "Escuela de idiomas Kulturwelt Institut",
   viewport: "width=device-width, initial-scale=1",
   creator: "Saywa Chavez",
   category: "learning",
