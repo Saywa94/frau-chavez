@@ -6,6 +6,37 @@
   display: flex;
   overflow: hidden;
 }
+.navigation {
+  position: absolute;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+.navigation > span {
+  background-color: #c8c8c870;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+.navigation > span:hover {
+  background-color: #c8c8c836;
+}
+.navigation > span > svg {
+  stroke: white;
+}
+.back_button > svg {
+  margin-right: 2px;
+}
+.next_button > svg {
+  margin-left: 2px;
+}
 .slide {
   width: 100%;
   max-height: 650px;
