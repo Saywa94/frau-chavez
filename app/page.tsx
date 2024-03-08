@@ -1,5 +1,6 @@
 import styles from "@/styles/Home.module.css";
 import Slider from "@/components/Slider";
+import Navbar from "@/components/Navbar";
 
 const main_images = [
   {
@@ -38,13 +39,15 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
+        <Navbar />
+
         <Slider images={main_images} />
 
         <div className={styles.content}>
           <div className={styles.center}>
             <h1></h1>
           </div>
-
+          <div style={{ minHeight: "25em" }}></div>
           <div>
             <p className={styles.signature}>A Frau Chavez project.</p>
           </div>
